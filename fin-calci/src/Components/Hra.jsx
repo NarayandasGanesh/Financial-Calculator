@@ -32,7 +32,7 @@ const Hra = () => {
 
   const handleInputClick = (inputName) => {
     if (!data.includes(inputName)) {
-      setData((prevData) => [...prevData, inputName]);
+      setData((prevData) => [prevData, inputName]);
     }
   };
 
@@ -41,13 +41,13 @@ const Hra = () => {
       <div className="container">
         <h1 className="calci-heading">HOUSE RENT ALLOWANCE</h1>
         <form>
-          <div className="grey-row content">
+          <div className="grey-col content">
             <label>Basic Salary</label>
             <input
               type="text"
               maxLength={10}
               value={basicSalary}
-              onChange={(e) => setBasicSalary(parseInt(e.target.value))}
+              onChange={(e) => setBasicSalary(e.target.value)}
               onClick={() => handleInputClick("basicSalary")}
             />
           </div>
@@ -57,11 +57,11 @@ const Hra = () => {
               type="text"
               maxLength={10}
               value={da}
-              onChange={(e) => setDa(parseInt(e.target.value))}
+              onChange={(e) => setDa(e.target.value)}
               onClick={() => handleInputClick("da")}
             />
           </div>
-          <div className="grey-row content">
+          <div className="grey-col content">
             <label>
               Commission (as % of turnover achieved by the employee)
             </label>
@@ -69,7 +69,7 @@ const Hra = () => {
               type="text"
               maxLength={10}
               value={commission}
-              onChange={(e) => setCommission(parseInt(e.target.value))}
+              onChange={(e) => setCommission(e.target.value)}
               onClick={() => handleInputClick("commission")}
             />
           </div>
@@ -80,18 +80,18 @@ const Hra = () => {
               type="text"
               maxLength={10}
               value={hraReceived}
-              onChange={(e) => setHraReceived(parseInt(e.target.value))}
+              onChange={(e) => setHraReceived(e.target.value)}
               onClick={() => handleInputClick("hraReceived")}
             />
           </div>
 
-          <div className="grey-row content">
+          <div className="grey-col content">
             <label>Rent Paid</label>
             <input
               type="text"
               maxLength={10}
               value={rentPaid}
-              onChange={(e) => setRentPaid(parseInt(e.target.value))}
+              onChange={(e) => setRentPaid(e.target.value)}
               onClick={() => handleInputClick("rentPaid")}
             />
           </div>
@@ -100,12 +100,12 @@ const Hra = () => {
             <div>
               <input
                 type="checkbox"
-                onChange={(e) => setMetroCity(e.target.checked)}
+                onChange={(e) => setMetroCity(e.target.value)}
               />
               <span className="checkbox-head">(Tick if Yes)</span>
             </div>
           </div>
-          <div className="grey-row content">
+          <div className="grey-col content">
             <label>Exempted House Rent Allowance</label>
             <input
               type="number"

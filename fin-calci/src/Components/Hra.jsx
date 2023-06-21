@@ -14,18 +14,8 @@ const Hra = () => {
 
   const handleCalculate = () => {
     const totalSalary = basicSalary + commission + da;
-    const actualHraReceived = Math.min(
-      hraReceived,
-      rentPaid,
-      totalSalary * (metroCity ? 0.4 : 0.6)
-    );
-    const rentExceeds10Percent = rentPaid > totalSalary * 0.1;
-    const hraExempt = actualHraReceived - (rentPaid - totalSalary * 0.1);
-    const taxableHRA = rentExceeds10Percent ? hraExempt : actualHraReceived;
-    const exemptedHRA = actualHraReceived - taxableHRA;
-
-    setTaxableHRA(taxableHRA);
-    setExemptedHRA(exemptedHRA);
+    setTaxableHRA(totalSalary);
+    setExemptedHRA(totalSalary);
   };
 
   const handleResetButton = () => {
@@ -46,7 +36,6 @@ const Hra = () => {
     }
   };
 
-  // console.log(metroCity);
   return (
     <>
       <div className="container">
